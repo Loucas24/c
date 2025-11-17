@@ -12,7 +12,7 @@ int main(){
     width = size * size;
     int max_height = 0;
     max_height = 3*size - 1;
-    char img [110][113];
+    char img [110][30];
     for(int i = 0 ; i < width ; i++)
     {
         for(int j = 0 ; j < max_height ; j++)
