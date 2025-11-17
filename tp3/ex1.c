@@ -5,5 +5,7 @@
 
 
 int main(){
+    int taille = 0;
+    printf("Choissisez la taille de votre etoile ( 5<= taille <= 10)\n");
 
 }
