@@ -73,6 +73,48 @@ int main(){
         
     }
 
+    //jambes etoile
+    //bloc
+    for(int i = size + (size*2 -2 - size) ; i< max_height  ; i++)
+    {
+        for(int j = 0 ; j < width ; j++)
+        {
+            img[i][j] = 'S';
+        }
+    }
+
+    //creusage mid
+    for(int i = size + (size*2 -2 - size) ; i< max_height  ; i++)
+    {
+        for(int j = 0  ; j < width ; j++)
+        {
+           if(j >= mid-1*(i-(size + (size*2 -2 - size))-1) && j<=mid+1*(i-(size + (size*2 -2 - size))-1))
+           {
+            img[i][j] = ' ';
+           }
+        }
+    }
+
+    //bord droit
+    for(int i = size + (size*2 -2 - size) ; i< max_height  ; i++)
+    {
+        for(int j = mid ; j < mid*2+1 ; j++)
+        {
+            img[i][j+i] = ' ';
+        }
+    }
+
+    //bord gauche
+    for(int i = size + (size*2 -2 - size) ; i< max_height  ; i++)
+    {
+        for(int j = mid -1 ; j >0 ; j--)
+        {
+            img[i][j-i] = ' ';
+        }
+    }
+
+    
+
 
 
 
