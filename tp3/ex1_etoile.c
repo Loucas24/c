@@ -10,7 +10,7 @@ int main(){
     scanf("%d",&size);
     while (size < 5 || size > 10)
     {
-        printf("valeur non conforme ( 5<= taille <= 10 et taille soit un entier)\n");
+        printf("valeur non conforme, reessayez( 5<= taille <= 10 et taille soit un entier)\n");
         scanf("%d",&size); 
     }
     
@@ -18,24 +18,56 @@ int main(){
     width = size * size;
     int max_height = 0;
     max_height = 3*size - 1;
-    char img [110][30];
+    char img [110][110];
     for(int i = 0 ; i < max_height ; i++)
     {
         for(int j = 0 ; j < width ; j++)
         {
-            img[j][i] = ' ';
+            img[i][j] = ' ';
         }
 
     }
-    //for (int i = 0 ; i < max_height ; i++)
-    //{
-    //    for(int j = 0 ; j < width ; j++)
-    //    {
-    //        printf("%c",img[i][j]);
-    //    }
-    //}
     int mid = 0;
     mid = width / 2;
+
+    //pointe etoile
+    for(int i = 0 ; i < size ; i++)
+    {
+        if(i == size-1)
+        {
+            for(int j = 0 ; j < width ; j++)
+            {
+                img[i][j] = '_';
+            }
+            
+        }
+        
+        for(int j = 0 ; j < i * 2 + 1 ; j++)
+        {
+            if (j == 0 || j == i * 2)
+            {
+                img[i][mid + (j-i)] = 'A';
+            }
+            else
+            {
+                img[i][mid + (j-i)] = 'S';
+            }
+            
+        }
+    }
+
+
+
+
+//affichage image
+    for (int i = 0 ; i < max_height ; i++)
+    {
+        for(int j = 0 ; j < width ; j++)
+        {
+            printf("%c",img[i][j]);
+        }
+        printf("\n");
+    }
     
     
 
