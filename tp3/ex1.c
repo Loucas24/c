@@ -12,5 +12,6 @@ int main(){
     width = size * size;
     int max_height = 0;
     max_height = 3*size - 1;
+    char img [width][max_height];
 
 }
