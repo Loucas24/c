@@ -54,7 +54,25 @@ int main(){
             }
             
         }
+        
     }
+
+    //corps etoile
+    for(int i = size ; i< size*2 -2 ; i++)
+    {
+        int taille = 0;
+        taille = 2*i - 2*size;
+        for(int j = taille ; j < width - taille ; j++)
+        {
+            img[i][j] = 'S';
+            if (j == taille || j == width - taille - 1)
+            {
+                img[i][j] = '.';
+            }
+        }
+        
+    }
+
 
 
 
