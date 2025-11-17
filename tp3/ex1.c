@@ -13,5 +13,15 @@ int main(){
     int max_height = 0;
     max_height = 3*size - 1;
     char img [width][max_height];
+    for(int i = 0 ; i < width ; i++)
+    {
+        for(int j = 0 ; j < max_height ; j++)
+        {
+            printf(" ");
+        }
+    }
 
+
+
+    return 0;
 }
