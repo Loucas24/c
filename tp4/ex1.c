@@ -26,27 +26,59 @@ int lire_choix()
 int saisirNombreEleves()
 {
     int nb_eleve = 0;
-    printf("Entrez le nombre d'eleves (1 à 30) : ");
+    printf("Entrez le nombre d'eleves (1 a 30) : ");
     scanf("%d",&nb_eleve);
     while (nb_eleve < 1 || nb_eleve > 30)
     {
         printf("Valeur invalide\n");
-        printf("Entrez le nombre d'eleves (1 à 30) : ");
+        printf("Entrez le nombre d'eleves (1 a 30) : ");
         scanf("%d",&nb_eleve);
     }
     return nb_eleve;
     
 }
 
+int saisirNotes(int nb_eleve)
+{
+    int tab[30][3] = {};
+    printf("Saisie des notes pour %d eleves et 3 controles\n",nb_eleve);
+    for(int i = 0 ; i < nb_eleve ; i ++)
+    {
+        printf("Eleve %d\n",i+1);
+        for(int j = 0; j < 3 ; j++)
+        {
+            printf(" Note du controle %d (0 a 20): " ,j+1);
+            scanf("%d",&tab[i][j]);
+            while (tab[i][j] < 0 || tab[i][j] > 20)
+            {
+                printf("Note invalide\n");
+                printf(" Note du controle %d (0 a 20): " ,j+1);
+                scanf("%d",&tab[i][j]);
+            }
+                
+        }
+    }
+    return tab[30][3];
+} 
+
 int main(){
+    int nb_eleve = 0;
+    int tab[30][3] = {};
+    while (1)
+    {
     afficher_menu();
     int choix = lire_choix();
     switch (choix)
     {
-        case 1 :
-        {
-            int nb_eleve = saisirNombreEleves();
-        }
+        case 1:
+            nb_eleve = saisirNombreEleves();
+            break;
+
+        case 2:
+            tab[30][3] = saisirNotes(nb_eleve);
+            break;
+
+    }
     }
     return 0;
 }
