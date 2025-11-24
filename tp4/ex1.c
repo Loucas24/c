@@ -74,6 +74,21 @@ void afficherNotes(int tab[30][3],int nb_eleve)
     }
 }
 
+void calculerMoyenneEleve(int tab[30][3],int nb_eleve)
+{
+    int note_tot = 0;
+    int indice = 0;
+    printf("Entrez l'indice de l'eleve : ");
+    scanf("%d",&indice);
+    for(int i = 0; i < 3; i++)
+    {
+        note_tot = note_tot + tab[indice-1][i];
+    }
+    float moyenne = 0.00;
+    moyenne = note_tot / 3.0;
+    printf("Moyenne de l'eleve %d : %.2f\n",indice,moyenne);
+}
+
 int main(){
     int nb_eleve = 0;
     int tab[30][3] = {};
@@ -93,6 +108,10 @@ int main(){
         
         case 3:
             afficherNotes(tab,nb_eleve);
+            break;
+        
+        case 4:
+            calculerMoyenneEleve(tab,nb_eleve);
             break;
 
     }
