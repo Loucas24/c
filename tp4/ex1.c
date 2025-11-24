@@ -38,9 +38,8 @@ int saisirNombreEleves()
     
 }
 
-int saisirNotes(int nb_eleve)
+void saisirNotes(int tab[30][3],int nb_eleve)
 {
-    int tab[30][3] = {};
     printf("Saisie des notes pour %d eleves et 3 controles\n",nb_eleve);
     for(int i = 0 ; i < nb_eleve ; i ++)
     {
@@ -58,8 +57,22 @@ int saisirNotes(int nb_eleve)
                 
         }
     }
-    return tab[30][3];
 } 
+
+void afficherNotes(int tab[30][3],int nb_eleve)
+{
+    printf("Tableau des notes\n");
+    printf("Eleve C1 C2 C3\n");
+    for(int i = 0; i < nb_eleve; i++)
+    {
+        printf("    %d",i+1);
+        for(int j = 0; j < 3; j++)
+        {
+            printf("  %d",tab[i][j]);
+        }
+        printf("\n");
+    }
+}
 
 int main(){
     int nb_eleve = 0;
@@ -75,7 +88,11 @@ int main(){
             break;
 
         case 2:
-            tab[30][3] = saisirNotes(nb_eleve);
+            saisirNotes(tab,nb_eleve);
+            break;
+        
+        case 3:
+            afficherNotes(tab,nb_eleve);
             break;
 
     }
