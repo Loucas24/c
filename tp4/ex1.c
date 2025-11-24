@@ -11,7 +11,7 @@ void afficher_menu()
     printf("3. Afficher toutes les notes\n");
     printf("4. Afficher la moyenne d'un eleve\n");
     printf("5. Afficher la moyenne generale\n");
-    printf("6. Afficher la meilleure note d'un controle\n");
+    printf("6. Afficher la meilleure note des controles\n");
     printf("0. Quitter\n");
 }
 
@@ -99,7 +99,29 @@ void calculerMoyenneGenerale(int tab[30][3],int nb_eleve)
     float moy_g = 0.00;
     moy_g = moy_tot / nb_el;
     printf("Moyenne generale : %.2f\n",moy_g);
+}
 
+int afficherMeilleurNote(int tab[30][3],int nb_eleve,int indice_controle)
+{
+    int note = tab[0][indice_controle];
+    for(int i = 0; i<nb_eleve;i++)
+    {
+        if (tab[i][indice_controle] > note)
+        {
+            note = tab[i][indice_controle];
+        }
+    }
+    return note;
+
+}
+
+void afficherMeilleuresNotes(int tab[30][3],int nb_eleve)
+{
+    for(int i = 0;i < 3;i++)
+    {
+        int note = afficherMeilleurNote(tab,nb_eleve,i);
+        printf("Meilleure note au controle %d : %d\n",i+1,note);
+    }
 }
 
 int main(){
@@ -133,6 +155,13 @@ int main(){
         case 5:
             calculerMoyenneGenerale(tab,nb_eleve);
             break;
+
+        case 6:
+            afficherMeilleuresNotes(tab,nb_eleve);
+            break;
+        
+        case 0:
+            return 0 ;
 
     }
     }
