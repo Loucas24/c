@@ -14,3 +14,11 @@ void afficher_menu()
     printf("6. Afficher la meilleure note d'un controle\n");
     printf("0. Quitter\n");
 }
+
+
+int main(){
+    afficher_menu();
+    return 0;
+}
+
+
