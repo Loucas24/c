@@ -10,3 +10,33 @@ void afficher_menu()
     printf("2. Quitter\n");
 }
 
+int lire_choix()
+{
+    int choix = 0;
+    printf("Votre choix : ");
+    scanf("%d",&choix);
+    return choix;
+}
+
+
+
+
+
+int main(){
+    while (1)
+    {
+    afficher_menu();
+    int choix = lire_choix();
+    switch (choix)
+    {
+        case 1:
+            break;
+
+        case 2:
+            return 0;
+
+    }
+    }
+    return 0;
+}
+
