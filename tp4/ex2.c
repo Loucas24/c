@@ -18,11 +18,21 @@ int lire_choix()
     return choix;
 }
 
+int saisir_montant()
+{
+    int montant = 0;
+    printf("Montant à retirer : ");
+    scanf("%d",&montant);
+    return montant;
+    
+}
+
 
 
 
 
 int main(){
+    int montant = 0;
     while (1)
     {
     afficher_menu();
