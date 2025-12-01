@@ -1,6 +1,8 @@
 #include "ex1.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <windows.h>
+#include <locale.h>
 
 void affiche_menu(){
     printf("==============================\n");
@@ -95,14 +97,61 @@ int ajouterConsommation(int tab[]){
 }
 
 void afficheResume(int tab[]){
+    int humeurbonbon = 0;
+    humeurbonbon = humeurBonbons(tab);
+    int humeurlegumes = 0;
+    humeurbonbon = humeurLegumes(tab);
+    int humeurfruits = 0;
+    humeurbonbon = humeurFruits(tab);
     printf("========== Resume du jour ==========\n");
-    printf("Eau       : %d\n",tab[0]);
-    printf("Cafe      : %d\n",tab[1]);
-    printf("Bonbons   : %d\n",tab[2]);
-    printf("Gateau    : %d\n",tab[3]);
-    printf("Legumes   : %d\n",tab[4]);
-    printf("Fruits    : %d\n",tab[5]);
-    printf("Proteines : %d\n",tab[6]);
+    printf("Eau       : %d 💧\n",tab[0]);
+    printf("Cafe      : %d ☕\n",tab[1]);
+
+    if (humeurbonbon == 0)
+    {
+        printf("Bonbons   : %d 🍬 😇\n",tab[2]);
+    }
+    else if (humeurbonbon == 1)
+    {
+        printf("Bonbons   : %d 🍬 🙂\n",tab[2]);
+    }
+    else if (humeurbonbon == 2)
+    {
+        printf("Bonbons   : %d 🍬 😕\n",tab[2]);
+    }
+    else
+    {
+        printf("Bonbons   : %d 🍬 👿\n",tab[2]);
+    }
+
+    printf("Gateau    : %d 🍰\n",tab[3]);
+
+    if (humeurlegumes == 0)
+    {
+        printf("Legumes   : %d 🥦 😭\n",tab[4]);
+    }
+    else if (humeurlegumes == 1)
+    {
+        printf("Legumes   : %d 🥦 🙂\n",tab[4]);
+    }
+    else
+    {
+        printf("Legumes   : %d 🥦 😎\n",tab[4]);
+    }
+
+    if (humeurfruits == 0)
+    {
+        printf("Fruits    : %d 🍎 😢\n",tab[5]);
+    }
+    else if (humeurfruits == 1)
+    {
+        printf("Fruits    : %d 🍎 🙂\n",tab[5]);
+    }
+    else
+    {
+        printf("Fruits    : %d 🍎 😄\n",tab[5]);
+    }
+    printf("Proteines : %d 🍗\n",tab[6]);
     printf("====================================\n");
 }
 
@@ -121,7 +170,7 @@ void charger(char nom[], int tab[])
 
 void sauvegarder(char nom[], int tab[])
 {
-    FILE*f = fopen(nom,"w");
+    FILE*f = fopen(nom,"w+");
     if (f== NULL)
     {
         printf("echec ouverture\n");
@@ -130,4 +179,59 @@ void sauvegarder(char nom[], int tab[])
     fprintf(f,"%d %d %d %d %d %d %d\n",tab[0],tab[1],tab[2],tab[3],tab[4],tab[5],tab[6]);
     fclose(f);
 
+}
+
+int humeurBonbons(int tab[])
+{
+    int humeur = 0;
+    if (0 <= tab[2] <= 3)
+    {
+        humeur = 0;
+    }
+    else if (4 <= tab[2] <= 7)
+    {
+        humeur = 1;
+    }
+    else if (8 <= tab[2] <= 12)
+    {
+        humeur = 2;
+    } 
+    else
+    {
+        humeur = 3; 
+    }
+}
+
+int humeurLegumes(int tab[])
+{
+    int humeur = 0;
+    if (0 <= tab[4] <= 2)
+    {
+        humeur = 0;
+    }
+    else if (3 <= tab[4] <= 5)
+    {
+        humeur = 1;
+    }
+    else
+    {
+        humeur = 2; 
+    }
+}
+
+int humeurFruits(int tab[])
+{
+    int humeur = 0;
+    if (0 <= tab[5] <= 4)
+    {
+        humeur = 0;
+    }
+    else if (5 <= tab[5] <= 8)
+    {
+        humeur = 1;
+    }
+    else
+    {
+        humeur = 2; 
+    }
 }
