@@ -18,3 +18,11 @@ int lire_choix()
     scanf("%d",&choix);
     return choix;
 }
+
+int initialiser(int tab[]){
+    for(int i = 0; i < 6; i++)
+    {
+        tab[i] = 0;
+    }
+    return tab;
+}

@@ -6,4 +6,5 @@
 
 void affiche_menu();
 int lire_choix();
+int initialiser(int tab);
 #endif

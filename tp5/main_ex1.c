@@ -3,8 +3,9 @@
 #include <stdio.h>
 
 int main(){
-    int tab[8] = {0,0,0,0,0,0,0};
+    int tab[7];
     int choix = 0;
+    initialiser(tab);
     while (1)
     {
     affiche_menu();
