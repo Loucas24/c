@@ -104,54 +104,67 @@ void afficheResume(int tab[]){
     int humeurfruits = 0;
     humeurbonbon = humeurFruits(tab);
     printf("========== Resume du jour ==========\n");
-    printf("Eau       : %d 💧\n",tab[0]);
-    printf("Cafe      : %d ☕\n",tab[1]);
-
+    printf("Eau       : %d 💧",tab[0]);
+    afficherBarre(tab[0],10);
+    printf("Cafe      : %d ☕",tab[1]);
+    afficherBarre(tab[1],10);
     if (humeurbonbon == 0)
     {
-        printf("Bonbons   : %d 🍬 😇\n",tab[2]);
+        printf("Bonbons   : %d 🍬 😇",tab[2]);
+        afficherBarre(tab[2],10);
     }
     else if (humeurbonbon == 1)
     {
-        printf("Bonbons   : %d 🍬 🙂\n",tab[2]);
+        printf("Bonbons   : %d 🍬 🙂",tab[2]);
+        afficherBarre(tab[2],10);
     }
     else if (humeurbonbon == 2)
     {
-        printf("Bonbons   : %d 🍬 😕\n",tab[2]);
+        printf("Bonbons   : %d 🍬 😕",tab[2]);
+        afficherBarre(tab[2],10);
     }
     else
     {
-        printf("Bonbons   : %d 🍬 👿\n",tab[2]);
+        printf("Bonbons   : %d 🍬 👿",tab[2]);
+        afficherBarre(tab[2],10);
     }
 
-    printf("Gateau    : %d 🍰\n",tab[3]);
+    printf("Gateau    : %d 🍰",tab[3]);
+    afficherBarre(tab[3],10);
 
     if (humeurlegumes == 0)
     {
-        printf("Legumes   : %d 🥦 😭\n",tab[4]);
+        printf("Legumes   : %d 🥦 😭",tab[4]);
+        afficherBarre(tab[4],10);
     }
     else if (humeurlegumes == 1)
     {
-        printf("Legumes   : %d 🥦 🙂\n",tab[4]);
+        printf("Legumes   : %d 🥦 🙂",tab[4]);
+        afficherBarre(tab[4],10);
     }
     else
     {
-        printf("Legumes   : %d 🥦 😎\n",tab[4]);
+        printf("Legumes   : %d 🥦 😎",tab[4]);
+        afficherBarre(tab[4],10);
     }
 
     if (humeurfruits == 0)
     {
-        printf("Fruits    : %d 🍎 😢\n",tab[5]);
+        printf("Fruits    : %d 🍎 😢",tab[5]);
+        afficherBarre(tab[5],10);
     }
     else if (humeurfruits == 1)
     {
-        printf("Fruits    : %d 🍎 🙂\n",tab[5]);
+        printf("Fruits    : %d 🍎 🙂",tab[5]);
+        afficherBarre(tab[5],10);
     }
     else
     {
-        printf("Fruits    : %d 🍎 😄\n",tab[5]);
+        printf("Fruits    : %d 🍎 😄",tab[5]);
+        afficherBarre(tab[5],10);
     }
-    printf("Proteines : %d 🍗\n",tab[6]);
+    printf("Proteines : %d 🍗",tab[6]);
+    afficherBarre(tab[6],10);
     printf("====================================\n");
 }
 
@@ -234,4 +247,34 @@ int humeurFruits(int tab[])
     {
         humeur = 2; 
     }
+}
+
+void afficherBarre(int valeur, int max)
+{
+    if (max<=0)
+    {
+        max = 1;
+    }
+    if (valeur >= max)
+    {
+        valeur = max;
+    }
+    if (valeur <= 0)
+    {
+        valeur = 0;
+    }
+    int casesPleines = 0;
+    casesPleines = (valeur*10)/max;
+    for(int i = 0;i < 10;i++)
+    {
+        if (i < casesPleines)
+        {
+            printf("█");
+        }
+        else
+        {
+            printf("░");
+        }
+    }
+    printf("\n");
 }

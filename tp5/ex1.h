@@ -16,4 +16,5 @@ void sauvegarder(char nom[], int tab[]);
 int humeurBonbons(int tab[]);
 int humeurLegumes(int tab[]);
 int humeurFruits(int tab[]);
+void afficherBarre(int valeur,int max);
 #endif
