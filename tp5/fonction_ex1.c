@@ -10,7 +10,8 @@ void affiche_menu(){
     printf("==============================\n");
     printf("1. Ajouter une consommation\n");
     printf("2. Afficher le resume du jour\n");
-    printf("3. Sauvegarder et quitter\n");
+    printf("3. Afficher les objectifs et le score\n");
+    printf("4. Sauvegarder et quitter\n");
 }
 
 int lire_choix()
@@ -34,12 +35,12 @@ int ajouterConsommation(int tab[]){
     printf("Quelle categorie voulez vous modifier\n");
     printf("\n");
     printf("1. Eau 💧\n");
-    printf("2. Cafe ☕\n");
+    printf("2. Café ☕\n");
     printf("3. Bonbons 🍬\n");
     printf("4. Gateau 🍰\n");
-    printf("5. Legumes 🥦\n");
+    printf("5. Légumes 🥦\n");
     printf("6. Fruits 🍎\n");
-    printf("7. Proteines 🍗\n");
+    printf("7. Protéines 🍗\n");
     printf("Votre choix : ");
     scanf("%d",&choix);
     switch (choix)
@@ -106,7 +107,7 @@ void afficheResume(int tab[]){
     printf("========== Resume du jour ==========\n");
     printf("Eau       : %d 💧",tab[0]);
     afficherBarre(tab[0],10);
-    printf("Cafe      : %d ☕",tab[1]);
+    printf("Café      : %d ☕",tab[1]);
     afficherBarre(tab[1],10);
     if (humeurbonbon == 0)
     {
@@ -134,17 +135,17 @@ void afficheResume(int tab[]){
 
     if (humeurlegumes == 0)
     {
-        printf("Legumes   : %d 🥦 😭",tab[4]);
+        printf("Légumes   : %d 🥦 😭",tab[4]);
         afficherBarre(tab[4],10);
     }
     else if (humeurlegumes == 1)
     {
-        printf("Legumes   : %d 🥦 🙂",tab[4]);
+        printf("Légumes   : %d 🥦 🙂",tab[4]);
         afficherBarre(tab[4],10);
     }
     else
     {
-        printf("Legumes   : %d 🥦 😎",tab[4]);
+        printf("Légumes   : %d 🥦 😎",tab[4]);
         afficherBarre(tab[4],10);
     }
 
@@ -163,7 +164,7 @@ void afficheResume(int tab[]){
         printf("Fruits    : %d 🍎 😄",tab[5]);
         afficherBarre(tab[5],10);
     }
-    printf("Proteines : %d 🍗",tab[6]);
+    printf("Protéines : %d 🍗",tab[6]);
     afficherBarre(tab[6],10);
     printf("====================================\n");
 }
@@ -277,4 +278,100 @@ void afficherBarre(int valeur, int max)
         }
     }
     printf("\n");
+}
+
+void objectifscore(int tab[],int objectif[])
+{
+    printf("====== Obejectif du jour ======\n");
+    printf("Categorie Objectif Atteint ?\n");
+    if (tab[0] >= objectif[0])
+    {
+       printf("Eau :  8  ✅\n"); 
+    }
+    else
+    {
+       printf("Eau :  8  ❌\n");  
+    }
+    printf("Café : - (pas d'objectif)\n");
+    printf("Bonbons : - (pas d'objectif)\n");
+    printf("Gateau : - (pas d'objectif)\n");
+    if (tab[4] >= objectif[4])
+    {
+       printf("Légumes :  5  ✅\n"); 
+    }
+    else
+    {
+       printf("Légumes :  5  ❌\n");  
+    }
+    if (tab[5] >= objectif[5])
+    {
+       printf("Fruits :  3  ✅\n"); 
+    }
+    else
+    {
+       printf("Fruits :  3  ❌\n");  
+    }
+    if (tab[6] >= objectif[6])
+    {
+       printf("Protéines :  2  ✅\n"); 
+    }
+    else
+    {
+       printf("Protéines :  2  ❌\n");  
+    }
+    int scorefinal = 0;
+    scorefinal = calculerScoreSante(tab,objectif);
+    printf("Score de santé du jour : %d /100\n",scorefinal);
+    printf("===============================\n");
+
+}
+
+int calculerScoreSante(int tab[],int objectif[])
+{
+    int scorebase = 50;
+    if (tab[0]>=objectif[0])
+    {
+        scorebase = scorebase + 10;
+    }
+    if (tab[4]>=objectif[4])
+    {
+        scorebase = scorebase + 10;
+    }
+    if (tab[5]>=objectif[5])
+    {
+        scorebase = scorebase + 10;
+    }
+    if (tab[6]>=objectif[6])
+    {
+        scorebase = scorebase + 10;
+    }
+    if (tab[3] >5)
+    {
+        int malus_max = 0;
+        malus_max = malus_max + (tab[3]/5);
+        if (malus_max > 15)
+        {
+            malus_max = 15;
+        }
+        scorebase = scorebase - malus_max;
+    }
+    if (tab[2] >3)
+    {
+        int malus_max = 0;
+        malus_max = malus_max + (tab[2]/3);
+        if (malus_max > 20)
+        {
+            malus_max = 20;
+        }
+        scorebase = scorebase - malus_max;
+    }
+    if (scorebase<=0)
+    {
+        scorebase = 0;
+    }
+    if (scorebase>=100)
+    {
+        scorebase = 100;
+    }
+    return scorebase;
 }

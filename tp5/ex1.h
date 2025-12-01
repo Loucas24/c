@@ -17,4 +17,6 @@ int humeurBonbons(int tab[]);
 int humeurLegumes(int tab[]);
 int humeurFruits(int tab[]);
 void afficherBarre(int valeur,int max);
+void objectifscore(int tab[],int objectif[]);
+int calculerScoreSante(int tab[],int objectif[]);
 #endif

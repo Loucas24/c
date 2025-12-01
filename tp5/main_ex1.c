@@ -8,6 +8,7 @@ int main(){
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
     setlocale(LC_ALL, ".UTF-8");
+    int objectif[7] = {8,0,0,0,5,3,2};
     int tab[7];
     int choix = 0;
     initialiser(tab);
@@ -28,6 +29,11 @@ int main(){
             break;
         
         case 3:
+            objectifscore(tab,objectif);
+            break;
+            
+        case 4:
+            sauvegarder("consommation.txt",tab);
             return 0;
     }
     }
