@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 int main(){
+    int tab[8] = {0,0,0,0,0,0,0};
     int choix = 0;
     while (1)
     {
