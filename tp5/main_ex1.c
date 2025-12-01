@@ -13,6 +13,7 @@ int main(){
     switch (choix)
     {
         case 1:
+            ajouterConsommation(tab);
             break;
 
         case 2:
