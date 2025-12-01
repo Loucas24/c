@@ -6,7 +6,7 @@
 
 void affiche_menu();
 int lire_choix();
-int initialiser(int tab[]);
+void initialiser(int tab[]);
 int ajouterConsommation(int tab[]);
-
+void afficheResume(int tab[]);
 #endif

@@ -19,12 +19,11 @@ int lire_choix()
     return choix;
 }
 
-int initialiser(int tab[]){
-    for(int i = 0; i < 6; i++)
+void initialiser(int tab[]){
+    for(int i = 0; i < 7; i++)
     {
         tab[i] = 0;
     }
-    return tab;
 }
 
 int ajouterConsommation(int tab[]){
@@ -39,58 +38,70 @@ int ajouterConsommation(int tab[]){
     printf("5. Legumes 🥦\n");
     printf("6. Fruits 🍎\n");
     printf("7. Proteines 🍗\n");
-    printf("Votre choix :");
+    printf("Votre choix : ");
     scanf("%d",&choix);
     switch (choix)
     {
         case 1:
-            printf("Combien d unites ajouter ?");
+            printf("Combien d unites ajouter ? ");
             scanf("%d",&quantite);
-            tab[choix] = tab[choix] + quantite;
-            printf("Consommation mise a jour");
+            tab[choix-1] = tab[choix-1] + quantite;
+            printf("Consommation mise a jour\n");
             break;
 
         case 2:
-            printf("Combien d unites ajouter ?");
+            printf("Combien d unites ajouter ? ");
             scanf("%d",&quantite);
-            tab[choix] = tab[choix] + quantite;
-            printf("Consommation mise a jour");
+            tab[choix-1] = tab[choix-1] + quantite;
+            printf("Consommation mise a jour\n");
             break;
 
         case 3:
-            printf("Combien d unites ajouter ?");
+            printf("Combien d unites ajouter ? ");
             scanf("%d",&quantite);
-            tab[choix] = tab[choix] + quantite;
-            printf("Consommation mise a jour");
+            tab[choix-1] = tab[choix-1] + quantite;
+            printf("Consommation mise a jour\n");
             break;
 
         case 4:
-            printf("Combien d unites ajouter ?");
+            printf("Combien d unites ajouter ? ");
             scanf("%d",&quantite);
-            tab[choix] = tab[choix] + quantite;
-            printf("Consommation mise a jour");
+            tab[choix-1] = tab[choix-1] + quantite;
+            printf("Consommation mise a jour\n");
             break;
 
         case 5:
-            printf("Combien d unites ajouter ?");
+            printf("Combien d unites ajouter ? ");
             scanf("%d",&quantite);
-            tab[choix] = tab[choix] + quantite;
-            printf("Consommation mise a jour");
+            tab[choix-1] = tab[choix-1] + quantite;
+            printf("Consommation mise a jour\n");
             break;
 
         case 6:
-            printf("Combien d unites ajouter ?");
+            printf("Combien d unites ajouter ? ");
             scanf("%d",&quantite);
-            tab[choix] = tab[choix] + quantite;
-            printf("Consommation mise a jour");
+            tab[choix-1] = tab[choix-1] + quantite;
+            printf("Consommation mise a jour\n");
             break;
         
         case 7:
-            printf("Combien d unites ajouter ?");
+            printf("Combien d unites ajouter ? ");
             scanf("%d",&quantite);
-            tab[choix] = tab[choix] + quantite;
-            printf("Consommation mise a jour");
+            tab[choix-1] = tab[choix-1] + quantite;
+            printf("Consommation mise a jour\n");
             break;
 
     }
+}
+
+void afficheResume(int tab[]){
+    printf("========== Resume du jour ==========\n");
+    printf("Eau       : %d\n",tab[0]);
+    printf("Cafe      : %d\n",tab[1]);
+    printf("Bonbons   : %d\n",tab[2]);
+    printf("Gateau    : %d\n",tab[3]);
+    printf("Legumes   : %d\n",tab[4]);
+    printf("Fruits    : %d\n",tab[5]);
+    printf("Proteines : %d\n",tab[6]);
+    printf("====================================\n");
 }

@@ -17,6 +17,7 @@ int main(){
             break;
 
         case 2:
+            afficheResume(tab);
             break;
         
         case 3:
