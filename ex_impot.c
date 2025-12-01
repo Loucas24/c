@@ -1,14 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<math.h>
-
-int fonctiondemande()
-{
-    int a = 0;
-    printf("Votre salaire annuel : ");
-    scanf("%d",a);
-    return a;
-}
+#include "menu.h"
 
 int main(){
     int sal_h = fonctiondemande();

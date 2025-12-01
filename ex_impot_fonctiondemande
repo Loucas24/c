@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+#include "menu.h"
+
+int fonctiondemande()
+{
+    int a = 0;
+    printf("Votre salaire annuel : ");
+    scanf("%d",a);
+    return a;
+}
