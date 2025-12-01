@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <windows.h>
 #include <locale.h>
+#include <time.h>
 
 int main(){
     SetConsoleOutputCP(CP_UTF8);
@@ -31,7 +32,7 @@ int main(){
         case 3:
             objectifscore(tab,objectif);
             break;
-            
+
         case 4:
             sauvegarder("consommation.txt",tab);
             return 0;

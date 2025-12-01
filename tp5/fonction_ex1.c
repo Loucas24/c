@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <windows.h>
 #include <locale.h>
+#include <time.h>
 
 void affiche_menu(){
     printf("==============================\n");
@@ -169,26 +170,26 @@ void afficheResume(int tab[]){
     printf("====================================\n");
 }
 
-void charger(char nom[], int tab[])
+int charger(char nom[], int tab[])
 {
     FILE*f = fopen(nom,"r");
     if (f== NULL)
     {
         printf("echec ouverture\n");
-        return ;
+        return 0;
     }
     fscanf(f,"%d %d %d %d %d %d %d",&tab[0],&tab[1],&tab[2],&tab[3],&tab[4],&tab[5],&tab[6]);
     fclose(f);
 
 }
 
-void sauvegarder(char nom[], int tab[])
+int sauvegarder(char nom[], int tab[])
 {
     FILE*f = fopen(nom,"w+");
     if (f== NULL)
     {
         printf("echec ouverture\n");
-        return ;
+        return 0;
     }
     fprintf(f,"%d %d %d %d %d %d %d\n",tab[0],tab[1],tab[2],tab[3],tab[4],tab[5],tab[6]);
     fclose(f);
