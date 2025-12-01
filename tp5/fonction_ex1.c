@@ -105,3 +105,16 @@ void afficheResume(int tab[]){
     printf("Proteines : %d\n",tab[6]);
     printf("====================================\n");
 }
+
+void charger(char nom[], int tab[])
+{
+    FILE*f = fopen(nom,"r");
+    if (f== NULL)
+    {
+        printf("echec ouverture\n");
+        return ;
+    }
+    fscanf(f,"%d %d %d %d %d %d %d",&tab[0],&tab[1],&tab[2],&tab[3],&tab[4],&tab[5],&tab[6]);
+    fclose(f);
+
+}

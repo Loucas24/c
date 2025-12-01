@@ -6,6 +6,7 @@ int main(){
     int tab[7];
     int choix = 0;
     initialiser(tab);
+    charger("consommation.txt",tab);
     while (1)
     {
     affiche_menu();
