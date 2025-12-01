@@ -118,3 +118,16 @@ void charger(char nom[], int tab[])
     fclose(f);
 
 }
+
+void sauvegarder(char nom[], int tab[])
+{
+    FILE*f = fopen(nom,"w");
+    if (f== NULL)
+    {
+        printf("echec ouverture\n");
+        return ;
+    }
+    fprintf(f,"%d %d %d %d %d %d %d\n",tab[0],tab[1],tab[2],tab[3],tab[4],tab[5],tab[6]);
+    fclose(f);
+
+}

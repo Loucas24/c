@@ -10,4 +10,5 @@ void initialiser(int tab[]);
 int ajouterConsommation(int tab[]);
 void afficheResume(int tab[]);
 void charger(char nom[], int tab[]);
+void sauvegarder(char nom[], int tab[]);
 #endif

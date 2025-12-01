@@ -15,6 +15,7 @@ int main(){
     {
         case 1:
             ajouterConsommation(tab);
+            sauvegarder("consommation.txt",tab);
             break;
 
         case 2:
