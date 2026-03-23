@@ -1,0 +1,10 @@
+﻿  fonction.c
+C:\Users\lukve\Documents\projet_visual\Liste_chaine\fonction.c(44,26): warning C4133: '=' : types incompatibles - de 'Groupe *' à 'Groupe *'
+C:\Users\lukve\Documents\projet_visual\Liste_chaine\fonction.c(50,26): warning C4133: '=' : types incompatibles - de 'Groupe *' à 'Groupe *'
+C:\Users\lukve\Documents\projet_visual\Liste_chaine\fonction.c(66,25): warning C4133: '=' : types incompatibles - de 'Groupe *' à 'Groupe *'
+C:\Users\lukve\Documents\projet_visual\Liste_chaine\fonction.c(67,16): warning C4133: '=' : types incompatibles - de 'Groupe *' à 'Groupe *'
+C:\Users\lukve\Documents\projet_visual\Liste_chaine\fonction.c(69,16): warning C4133: '=' : types incompatibles - de 'Groupe *' à 'Groupe *'
+C:\Users\lukve\Documents\projet_visual\Liste_chaine\fonction.c(84,8): warning C4133: '=' : types incompatibles - de 'Groupe *' à 'Groupe *'
+C:\Users\lukve\Documents\projet_visual\Liste_chaine\fonction.c(99,3): warning C4033: 'gains' doit retourner une valeur
+C:\Users\lukve\Documents\projet_visual\Liste_chaine\fonction.c(127,1): warning C4715: 'gains' : les chemins de contrôle ne retournent pas tous une valeur
+  Liste_chaine.vcxproj -> C:\Users\lukve\Documents\projet_visual\Liste_chaine\x64\Debug\Liste_chaine.exe

@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="../TU_parc_test/TU_parc_test.vcxproj" />
+  <Project Path="TU_parc.vcxproj" />
+</Solution>
