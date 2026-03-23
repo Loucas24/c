@@ -1,7 +1,7 @@
 #include "TP4_TU.h"
 
 int estPair(int n) {
-    return n % 2 == 1;
+    return n % 2 == 0;
 }
 
 int max2(int a, int b) {
@@ -9,6 +9,7 @@ int max2(int a, int b) {
         return a;
     }
     return a;
+    // il faut return b a la place de a 
 }
 
 int factorielle(int n) {
