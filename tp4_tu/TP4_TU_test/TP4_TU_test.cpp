@@ -108,15 +108,30 @@ namespace TP4TUtest
 		{
 			Assert::AreEqual(divisionExacte(10, 0), 0);
 		}
-
-
-
-
-
 		TEST_METHOD(TestsommeTab)
 		{
-			int tab[6] = { 1, 2, 3, 4, 5, 6 };
-			Assert::AreEqual(sommeTableau(tab, 6), 21);
+			int tab[6] = { 1, 2, 3 };
+			Assert::AreEqual(sommeTableau(tab, 3), 6);
+		}
+		TEST_METHOD(TestsommeTab2)
+		{
+			int tab[6] = { 5 };
+			Assert::AreEqual(sommeTableau(tab, 1), 5);
+		}
+		TEST_METHOD(TestsommeTab3)
+		{
+			int tab[6] = { -1, 4, -3 };
+			Assert::AreEqual(sommeTableau(tab, 3), 0);
+		}
+		TEST_METHOD(TestsommeTab4)
+		{
+			int tab[6] = { NULL };
+			Assert::AreEqual(sommeTableau(tab, 3), 0);
+		}
+		TEST_METHOD(TestsommeTab5)
+		{
+			int tab[6] = { 1,2,3,4,5,6 };
+			Assert::AreEqual(sommeTableau(tab, 0), 0);
 		}
 	};
 }

@@ -46,6 +46,10 @@ int divisionExacte(int a, int b) {
 
 int sommeTableau(const int tab[], int taille) {
     int somme = 0;
+    if (taille <= 0 || tab == NULL)
+    {
+        return 0;
+    }
     for (int i = 0; i < taille; i++) {//changement de i<=taille à i<taille
         somme += tab[i];
     }
