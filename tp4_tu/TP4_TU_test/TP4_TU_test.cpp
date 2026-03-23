@@ -35,8 +35,6 @@ namespace TP4TUtest
 		}
 
 
-
-
 		TEST_METHOD(TestEstMax)
 		{
 			Assert::AreEqual(max2(5, 3), 5);
@@ -55,13 +53,28 @@ namespace TP4TUtest
 		}
 
 
-
-
-
 		TEST_METHOD(TestFactoriel)
+		{
+			Assert::AreEqual(factorielle(0), 1);
+		}
+		TEST_METHOD(TestFactoriel2)
+		{
+			Assert::AreEqual(factorielle(1), 1);
+		}
+		TEST_METHOD(TestFactoriel3)
+		{
+			Assert::AreEqual(factorielle(4), 24);
+		}
+		TEST_METHOD(TestFactoriel4)
 		{
 			Assert::AreEqual(factorielle(5), 120);
 		}
+
+
+
+
+
+
 
 		TEST_METHOD(TestdivExacte)
 		{
@@ -77,11 +90,6 @@ namespace TP4TUtest
 		TEST_METHOD(TestMaj)
 		{
 			Assert::AreEqual(contientMajuscule("Majusc"), 1);
-		}
-
-		TEST_METHOD(TestFactoriel2)
-		{
-			Assert::AreEqual(factorielle(4), 20);
 		}
 
 		TEST_METHOD(TestdivExacte2)
