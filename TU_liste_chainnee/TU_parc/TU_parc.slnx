@@ -4,5 +4,5 @@
     <Platform Name="x86" />
   </Configurations>
   <Project Path="../TU_parc_test/TU_parc_test.vcxproj" />
-  <Project Path="TU_parc.vcxproj" />
+  <Project Path="TU_parc.vcxproj" Id="39a37b01-a8b4-48ac-9d10-4bb76e717321" />
 </Solution>

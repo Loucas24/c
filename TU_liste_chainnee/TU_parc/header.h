@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 
-typedef struct
+typedef struct Groupe
 {
 	int taille;
 	struct Groupe * suivant;
