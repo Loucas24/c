@@ -66,7 +66,7 @@ namespace TP4TUtest
 
 		TEST_METHOD(TestMaj2)
 		{
-			Assert::AreEqual(contientMajuscule("majusc"), 1);
+			Assert::AreEqual(contientMajuscule("majusc"), 0);
 		}
 	};
 }
