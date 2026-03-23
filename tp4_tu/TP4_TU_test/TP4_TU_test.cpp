@@ -71,6 +71,34 @@ namespace TP4TUtest
 		}
 
 
+		TEST_METHOD(TestMaj)
+		{
+			Assert::AreEqual(contientMajuscule("bonjour"), 0);
+		}
+		TEST_METHOD(TestMaj2)
+		{
+			Assert::AreEqual(contientMajuscule("BonJour"), 1);
+		}
+		TEST_METHOD(TestMaj3)
+		{
+			Assert::AreEqual(contientMajuscule("ABC"), 1);
+		}
+		TEST_METHOD(TestMaj4)
+		{
+			Assert::AreEqual(contientMajuscule(""), 0);
+		}
+		TEST_METHOD(TestMaj5)
+		{
+			Assert::AreEqual(contientMajuscule(NULL), 0);
+		}
+	
+
+
+
+
+
+
+
 
 
 
@@ -87,19 +115,9 @@ namespace TP4TUtest
 			Assert::AreEqual(sommeTableau(tab, 6), 21);
 		}
 
-		TEST_METHOD(TestMaj)
-		{
-			Assert::AreEqual(contientMajuscule("Majusc"), 1);
-		}
-
 		TEST_METHOD(TestdivExacte2)
 		{
 			Assert::AreEqual(divisionExacte(15, 2), 0);
-		}
-
-		TEST_METHOD(TestMaj2)
-		{
-			Assert::AreEqual(contientMajuscule("majusc"), 0);
 		}
 	};
 }
