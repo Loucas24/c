@@ -39,6 +39,11 @@ namespace TP4TUtest
 			Assert::AreEqual(sommeTableau(tab, 6), 21);
 		}
 
+		TEST_METHOD(TestMaj)
+		{
+			Assert::AreEqual(contientMajuscule("Majusc"), 1);
+		}
+
 		TEST_METHOD(TestEstMax2)
 		{
 			Assert::AreEqual(max2(6, 11), 11);
@@ -57,6 +62,11 @@ namespace TP4TUtest
 		TEST_METHOD(TestdivExacte2)
 		{
 			Assert::AreEqual(divisionExacte(15, 2), 0);
+		}
+
+		TEST_METHOD(TestMaj2)
+		{
+			Assert::AreEqual(contientMajuscule("majusc"), 1);
 		}
 	};
 }
