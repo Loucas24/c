@@ -33,6 +33,12 @@ namespace TP4TUtest
 			Assert::AreEqual(divisionExacte(20,2), 1);
 		}
 
+		TEST_METHOD(TestsommeTab)
+		{
+			int tab[6] = { 1, 2, 3, 4, 5, 6 };
+			Assert::AreEqual(sommeTableau(tab, 6), 21);
+		}
+
 		TEST_METHOD(TestEstMax2)
 		{
 			Assert::AreEqual(max2(6, 11), 11);
