@@ -40,6 +40,21 @@ void tri_date_peremption(Medoc tab[80])
             }
         }
     }
+}
 
-
+int recherche_dichotomique(Medoc tab[80], char cherche[50], int taille_cherche)
+{
+    int indice = 40;
+    Medoc * n = malloc(sizeof(Medoc)*80);
+    if(n == NULL)
+    {
+        return 0;
+    }
+    while(strcomp(n[indice].nom,cherche)!=0)
+    {
+        if(strcomp(n[indice].nom,cherche)==-1)
+        {
+            
+        }
+    }
 }
