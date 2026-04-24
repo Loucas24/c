@@ -19,7 +19,12 @@ int datePerempPlusGrand(Medoc d1, Medoc d2)
     return 0;
 }
 
-void saisirTab(Medoc tab[], int n) {
+void saisirTab(Medoc tab[], int n)
+{
+    if(tab == NULL)
+    {
+        return 0;
+    }
     for (int i = 0; i < n; i++) {
         printf("\nMédicament %d\n", i + 1);
 
@@ -58,7 +63,12 @@ void saisirTab(Medoc tab[], int n) {
     }
 }
 
-void tribulles(Medoc tab[], int n) {
+void tribulles(Medoc tab[], int n)
+{
+    if(tab == NULL)
+    {
+        return 0;
+    }
     Medoc temp;
 
     for (int i = 0; i < n - 1; i++) {
@@ -70,4 +80,56 @@ void tribulles(Medoc tab[], int n) {
             }
         }
     }
+}
+
+int rechercheDichotomique(Medoc tab[], int n, char nomRecherche[])
+{
+    if(tab == NULL)
+    {
+        return 0;
+    }
+    int debut = 0, fin = n - 1, milieu;
+
+    while (debut <= fin){
+        milieu = (debut + fin) / 2;
+
+        int cmp = strcmp(tab[milieu].nom, nomRecherche);
+
+        if (cmp == 0) {
+            return milieu;
+        } 
+        else if (cmp < 0) {
+            debut = milieu + 1;
+        } 
+        else {
+            fin = milieu - 1;
+        }
+    }
+
+    return -1;
+}
+
+
+
+
+
+int main(){
+    Medoc * tab = malloc(sizeof(Medoc)*80);
+
+    saisirTab(tab, 80);
+    tribulles(tab, 80);
+
+    int pos = rechercheDichotomique(tab, 80, "paracetamol");
+
+    if (pos != -1)
+    {
+        printf("Médicament trouvé à la position %d\n", pos);
+    } 
+    else{
+        printf("Médicament non trouvé\n");
+    }
+
+    free(tab);
+    tab = NULL;
+    return 0;
 }
