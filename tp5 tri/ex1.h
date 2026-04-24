@@ -1,20 +1,21 @@
 #ifndef PHARMA
 #define PHARMA
 
-typedef struct 
-{
-    int prix;
-    int ventes;
-    int stock;
-    int peremption_annee;
-    int peremption_mois;
-    int peremption_jour;
-    int code;
+typedef struct {
     char nom[50];
-    
+    int code;
+    int jour_fabric;
+    int mois_fabric;
+    int annee_fabric;
+    int jour_peremp;
+    int mois_peremp;
+    int annee_peremp;
+    float prix;
+    int nbvendus;
+    int nbstock;
 }Medoc;
+int datePerempPlusGrand(Medoc d1, Medoc d2);
 
-int tri_date_peremption(Medoc tab[80]);
 
 
 #endif

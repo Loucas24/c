@@ -2,59 +2,72 @@
 #include <stdlib.h>
 #include "ex1.h"
 
-void tri_date_peremption(Medoc tab[80])
+int datePerempPlusGrand(Medoc d1, Medoc d2)
 {
-    Medoc * n = malloc(sizeof(Medoc)*80);
-    if(n == NULL)
+    if(d1.annee_peremp > d2.annee_peremp)
     {
-        return 0;
+        return 1;
     }
-
-    for(int j = 0; j < 80; j++)
+    if(d1.annee_peremp == d2.annee_peremp && d1.mois_peremp > d2.mois_peremp)
     {
-        for(int i =0; i < 79; i++)
-        {
-            if(n[i].peremption_annee > n[i+1].peremption_annee)
-            {
-                Medoc temp = n[i];
-                n[i] = n[i+1];
-                n[i+1] = n[i];
-            }
-            if(n[i].peremption_annee == n[i+1].peremption_annee)
-            {
-                if(n[i].peremption_mois > n[i+1].peremption_mois)
-                {
-                    Medoc temp = n[i];
-                    n[i] = n[i+1];
-                    n[i+1] = n[i];
-                }
-                if(n[i].peremption_mois == n[i+1].peremption_mois)
-                {
-                    if(n[i].peremption_jour > n[i+1].peremption_jour)
-                    {
-                        Medoc temp = n[i];
-                        n[i] = n[i+1];
-                        n[i+1] = n[i];
-                    }
-                }
-            }
-        }
+        return 1;
+    }
+    if(d1.annee_peremp == d2.annee_peremp && d1.mois_peremp == d2.mois_peremp && d1.jour_peremp > d2.jour_peremp)
+    {
+        return 1;
+    }
+    return 0;
+}
+
+void saisirTab(Medoc tab[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("\nMédicament %d\n", i + 1);
+
+        printf("Nom : ");
+        scanf("%s", tab[i].nom);
+
+        printf("Code : ");
+        scanf("%s", tab[i].code);
+
+        printf("Date fabrication (jj) : ");
+        scanf("%d",&tab[i].jour_fabric);
+
+        printf("Date fabrication (mm) : ");
+        scanf("%d",&tab[i].mois_fabric);
+
+        printf("Date fabrication (aaaa) : ");
+        scanf("%d",&tab[i].annee_fabric);
+
+        printf("Date peremption (jj) : ");
+        scanf("%d",&tab[i].jour_peremp);
+
+        printf("Date peremption (mm) : ");
+        scanf("%d",&tab[i].mois_peremp);
+
+        printf("Date peremption (aaaa) : ");
+        scanf("%d",&tab[i].annee_peremp);
+
+        printf("Prix : ");
+        scanf("%f", &tab[i].prix);
+
+        printf("Nombre vendu : ");
+        scanf("%d", &tab[i].nbvendus);
+
+        printf("Stock restant : ");
+        scanf("%d", &tab[i].nbstock);
     }
 }
 
-int recherche_dichotomique(Medoc tab[80], char cherche[50], int taille_cherche)
-{
-    int indice = 40;
-    Medoc * n = malloc(sizeof(Medoc)*80);
-    if(n == NULL)
-    {
-        return 0;
-    }
-    while(strcomp(n[indice].nom,cherche)!=0)
-    {
-        if(strcomp(n[indice].nom,cherche)==-1)
-        {
-            
+void tribulles(Medoc tab[], int n) {
+    Medoc temp;
+
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (datePlusGrande(tab[j], tab[j + 1]) == 1) {
+                temp = tab[j];
+                tab[j] = tab[j + 1];
+                tab[j + 1] = temp;
+            }
         }
     }
 }
