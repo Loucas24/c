@@ -18,6 +18,7 @@ int datePerempPlusGrand(Medoc d1, Medoc d2);
 void saisirTab(Medoc tab[], int n);
 void tribulles(Medoc tab[], int n);
 int rechercheDichotomique(Medoc tab[], int n, char nomRecherche[]);
+void medicamentPlusCher(Medoc tab[], int n);
 
 
 

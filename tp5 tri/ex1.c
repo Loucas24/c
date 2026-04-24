@@ -109,6 +109,22 @@ int rechercheDichotomique(Medoc tab[], int n, char nomRecherche[])
     return -1;
 }
 
+void medicamentPlusCher(Medoc tab[], int n)
+{
+    Medoc max = tab[0];
+
+    for (int i = 1; i < n; i++) {
+        if (tab[i].prix > max.prix) {
+            max = tab[i];
+        }
+    }
+
+    printf("\n=== Médicament le plus cher ===\n");
+    printf("Nom : %s\n", max.nom);
+    printf("Code : %d\n", max.code);
+    printf("Prix : %.2f\n", max.prix);
+}
+
 
 
 
@@ -128,6 +144,8 @@ int main(){
     else{
         printf("Médicament non trouvé\n");
     }
+
+    medicamentPlusCher(tab, 80);
 
     free(tab);
     tab = NULL;
